@@ -1,7 +1,6 @@
 import numpy as np
 
 import matplotlib.dates as mdates
-from matplotlib.path import Path
 
 from scipy.io import readsav
 
@@ -26,7 +25,7 @@ def get_sav_data(year):
     flux: numpy.array (freq.shape, time.shape)
         Magnetic flux values for the chosen year.
     """
-    file_skr = f'raw_SKR/SKR_{year}_CJ.sav'
+    file_skr = f'../data/SKR_raw/SKR_{year}_CJ.sav'
     raw_skr = readsav(file_skr)
     flux, time_doy, freq = raw_skr['s'].copy(), raw_skr['t'], raw_skr['f']
     flux[flux == 0] = np.nan  # replace 0 with nans
