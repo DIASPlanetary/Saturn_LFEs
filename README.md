@@ -1,7 +1,7 @@
 # Saturn_LFEs
 
-__Authors__: Caitríona M. Jackman, Elizabeth O'Dwyer, Simon Walker, Nathan M. Besch
-__Dates__: 2023-2025
+- __Authors__: Caitríona M. Jackman, Elizabeth O'Dwyer, Simon Walker, Nathan M. Besch
+- __Dates__: 2023-2025
 
 Repository detailing data analysis and figure creation for Jackman et al. (2025) |insert DOI when released|.
 
