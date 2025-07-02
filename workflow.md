@@ -40,6 +40,8 @@ To Do
 -----
 
 - How do you want to deal with SPICE? was thinking: change spice path to your own files or download the relevant spice kernels using this githu repo |link to Matt's Autometa|
+- Before I can do anything else I will need to know the exact workflow of the code
+- Where is the data stored, how does it integrate with the code base
 
 CODE TO BE CHANGED
 ------------------
