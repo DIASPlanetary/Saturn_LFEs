@@ -1,7 +1,7 @@
+import configparser
+
 import numpy as np
-
 import matplotlib.dates as mdates
-
 from scipy.io import readsav
 
 def get_sav_data(year):
@@ -25,7 +25,12 @@ def get_sav_data(year):
     flux: numpy.array (freq.shape, time.shape)
         Magnetic flux values for the chosen year.
     """
-    file_skr = skr_raw + f'/SKR_{year}_CJ.sav'
+
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+    skr_raw_fp = config['folderpaths']['skr_raw']
+
+    file_skr = skr_raw_fp + f'/SKR_{year}_CJ.sav'
     raw_skr = readsav(file_skr)
     flux, time_doy, freq = raw_skr['s'].copy(), raw_skr['t'], raw_skr['f']
     flux[flux == 0] = np.nan  # replace 0 with nans

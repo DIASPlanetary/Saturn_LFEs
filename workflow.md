@@ -38,6 +38,12 @@ After that we need to talk about the integrated power calculation. I may want to
 
 To Do
 -----
-- Decide on how to divide the code into folders. think raw data, calculated data, good filenames. some jupyter notebooks might need to be converted to scripts and vice versa. create multiple folders acting as logical sections for the code, especially a divide between "calculatory" code and "analysis/figure" code
-- Create a python environment that the user can activate. requirements.txt file
-- 
+
+- How do you want to deal with SPICE? was thinking: change spice path to your own files or download the relevant spice kernels using this githu repo |link to Matt's Autometa|
+
+CODE TO BE CHANGED
+------------------
+- deal with the different name of 2017 sav file in lfe_func
+- recalculate polyflux using the joined LFEs and add code snippet that combines the file
+- name variable in polyflux combined as flux when first saving
+- change get_polygon_flux to python script
