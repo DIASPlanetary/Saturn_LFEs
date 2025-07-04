@@ -7,3 +7,4 @@ tqdm
 TFCat
 multiprocess
 xarray[complete]
+spiceypy

@@ -49,3 +49,118 @@ CODE TO BE CHANGED
 - recalculate polyflux using the joined LFEs and add code snippet that combines the file
 - name variable in polyflux combined as flux when first saving
 - change get_polygon_flux to python script
+
+HOW THE CODE WORKS
+------------------
+
+GOAL = We want start, end, duration, north/south phase, x, y, z, R, lat, localtime
+
+1) Sav files are the raw radio data with time (3min step), freq (48, first half log, then half linear), flux
+
+input: raw_SKR/
+process: none
+output: none
+
+2) Unet are polygons or subset of that data, with same time, freq, but no flux just polygon vertices.
+
+input: 2004001_2017258_catalogue.json
+process: ?
+output: 2004001_2017258_catalogue.csv
+
+3) need to know where spacecraft is for each time of LFEs and radio data -> use SPICE Spice has time (1min step), coords (xyz KSM).
+
+input: 2004001_2017258_catalogue.csv
+process: findDetectionPositions.py
+output: lfe_detections_unet.csv
+
+input: ?
+process: ?
+output: ephemeris file
+
+4) Polygons joining
+
+input: lfe_detections_unet.csv
+process: LFE_joiner in LFE_statistics.py
+output: LFEs_joined.csv
+
+5) PPO phases file with phase information to be added to the csv
+
+input: mag_phases_2004_2017_final.sav, LFEs_joined.csv
+process: SavePPO in Global_Local_Phases.py or SavePPO in LFE_statistics.py
+output: Joined_LFEs_w_phases.csv
+
+So there are actually three big parts to the code:
+- Make scientifically relevant LFE polygons
+- Create the big LFE joined files
+- Do the data analysis
+
+Other
+-----
+
+input: LFEs_joined.csv, LFE_joined_ephemeris.csv
+process: Omega_csv.py
+output: LFEs_joined_times_range_lst_lat.csv
+
+input:?
+process: plotting_func.py
+output: plots
+
+input:?
+process: Polar_Plot_Comparison.py
+output: plots
+
+input: ?
+process: Radio_visualisations_joined.py
+output: plots
+
+input: ?
+process: Radio_visualisations.py
+output: plots
+
+input: ?
+process: Step_Hist_R_LST_lat.py
+output: plots
+
+input: ?
+process: Sunspot_LFE_Occurence
+output: plots
+
+input: ?
+process: Cassini_Pos_LFE.py
+output: plots
+
+input: ?
+process: PlotPPO in LFE_statistics.py
+output: plots
+
+input: ?
+process: PPOphasecheck in LFE_statistics.py
+output: ?
+
+input: ?
+process: PlotDuration Histogram in LFE_statistics.py
+output: plots
+
+input: ?
+process: Delta_t_LFEs in LFE_statistics.py
+output: plots
+
+input: ?
+process: InspectLongestLFEs in LFE_statistics.py
+output: plots and "i love IDL"
+
+input: ?
+process: ResidencePlots in LFE_statistics.py
+output: plots
+
+input: ?
+process: PlotLfeDistributions1 in LFE_statistics.py
+output: plots
+
+input: ?
+process: PlotLfeDistributions in LFE_statistics.py
+output: plots
+
+input: ?
+process: ?
+output: ?
