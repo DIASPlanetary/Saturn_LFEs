@@ -42,6 +42,7 @@ To Do
 - How do you want to deal with SPICE? was thinking: change spice path to your own files or download the relevant spice kernels using this githu repo |link to Matt's Autometa|
 - Before I can do anything else I will need to know the exact workflow of the code
 - Where is the data stored, how does it integrate with the code base
+- Think about individual readmes instead of big general one
 
 CODE TO BE CHANGED
 ------------------
@@ -53,6 +54,14 @@ CODE TO BE CHANGED
 HOW THE CODE WORKS
 ------------------
 
+order to run files in:
+get_ephemeris.py
+join_lfes.py
+add_ppos.py
+
+to generate json:
+join_json.py
+
 GOAL = We want start, end, duration, north/south phase, x, y, z, R, lat, localtime
 
 1) Sav files are the raw radio data with time (3min step), freq (48, first half log, then half linear), flux
@@ -63,6 +72,8 @@ output: none
 
 2) Unet are polygons or subset of that data, with same time, freq, but no flux just polygon vertices.
 
+Json needs to be joined to obtain the actual good json file
+
 input: 2004001_2017258_catalogue.json
 process: ?
 output: 2004001_2017258_catalogue.csv
@@ -70,17 +81,13 @@ output: 2004001_2017258_catalogue.csv
 3) need to know where spacecraft is for each time of LFEs and radio data -> use SPICE Spice has time (1min step), coords (xyz KSM).
 
 input: 2004001_2017258_catalogue.csv
-process: findDetectionPositions.py
-output: lfe_detections_unet.csv
-
-input: ?
-process: ?
-output: ephemeris file
+process: get_ephemeris.py
+output: lfe_detections_unet.csv, ephemeris file
 
 4) Polygons joining
 
 input: lfe_detections_unet.csv
-process: LFE_joiner in LFE_statistics.py
+process: join_lfes
 output: LFEs_joined.csv
 
 5) PPO phases file with phase information to be added to the csv
