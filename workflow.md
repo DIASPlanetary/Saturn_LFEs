@@ -17,13 +17,13 @@ THEN need the code to join the LFE list - so we produce (i) LFEs_joined.csv whic
 
 Fig 3: Histogram of LFE duration for the 4553 joined events DONE
 
-Fig 4: Polar plots (3 panels)
+Fig 4: Polar plots (3 panels) DONE
 [** I will be writing a few lines in the overleaf on the individual bins that we searched where we have reasons to account for higher than surrounding activity **]
 
-Figure 5: *** new figure to add ***
+Figure 5: *** new figure to add *** DONE
 We need to discuss the rho-z map - possibly Monday afternoon when I'm back. I need to have the code to see if I can run it on my machine, and then decide on colour bar, linear vs log scale etc
 
-Figure 6: **to fix the code **
+Figure 6: **to fix the code ** (skip)
 3-panel of histograms of range, local time, latitude. Something funny going on with the normalisation of the LFE occurrence rate. To check what the code is calculating?
 
 Figure 7 onwards...
