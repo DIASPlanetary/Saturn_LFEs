@@ -32,7 +32,7 @@ Then into PPO phase plots. Nathan to share the code to make all these combinatio
 
 These were all for global phase, may need to do local phases as well.
 
-Figure XXX: Average spectrograms for (i) all, (ii) LFEs. Caitriona to check she can run this code locally on her machine.
+Figure XXX: Average spectrograms for (i) all, (ii) LFEs. Caitriona to check she can run this code locally on her machine. change to 3 hour segments
 
 After that we need to talk about the integrated power calculation. I may want to explore the rapid sheath traversals as a proxy for solar wind compression - and then examine the timeline of integrated power during these...
 
