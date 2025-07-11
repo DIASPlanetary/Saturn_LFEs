@@ -9,13 +9,13 @@ What do we start with?
 - access to SPICE kernels for Cassini to match spacecraft positions to all these radio data and LFE times
 THEN onto paper figures
 
-Fig 1: Histogram of LFE delta_t (code to make this should work fine for all, just need to explain a user would need their own config file)
+Fig 1: Histogram of LFE delta_t (code to make this should work fine for all, just need to explain a user would need their own config file) DONE
 
-Fig 2: 2-spectrogram plot illustrating joining
+Fig 2: 2-spectrogram plot illustrating joining DONE
 
 THEN need the code to join the LFE list - so we produce (i) LFEs_joined.csv which has the starts/stops and spacecraft position of the joined LFEs, (ii) revised json file with vertices of all the joined polygons
 
-Fig 3: Histogram of LFE duration for the 4553 joined events
+Fig 3: Histogram of LFE duration for the 4553 joined events DONE
 
 Fig 4: Polar plots (3 panels)
 [** I will be writing a few lines in the overleaf on the individual bins that we searched where we have reasons to account for higher than surrounding activity **]
