@@ -91,13 +91,13 @@ def get_CassiniEphemeris(datetimes):
                        'subLST':np.array(sub_lsts)})
     
     #   Calculate the radial distances (this could be done with SPICE, too)
-    df['R_KSM'] = np.sqrt(np.sum(df[['x_KSM', 'y_KSM', 'z_KSM']]**2, axis=1))
+    df['R_ksm'] = np.sqrt(np.sum(df[['x_ksm', 'y_ksm', 'z_ksm']]**2, axis=1))
     
     return df
 
 #   Print this to a csv (this will be pretty hefty)
-eph_df = get_CassiniEphemeris(minutely_datetimes)
-eph_df.to_csv('data/calculated/20040101000000_20170915115700_ephemeris.csv', index_label='datetime')
+#eph_df = get_CassiniEphemeris(minutely_datetimes)
+#eph_df.to_csv('data/calculated/20040101000000_20170915115700_ephemeris.csv', index_label='datetime')
 
 lfe_unet = pd.read_csv(unet_catalogue_csv_fp)
 startTimes = lfe_unet["start"]
@@ -118,7 +118,9 @@ lfe_stops = [datetime.datetime.strptime(t, '%Y-%m-%d %H:%M:%S.%f') for t in endT
 lfe_eph_df = get_CassiniEphemeris(lfe_starts)
 
 lfe_unet['start'] = lfe_starts
-lfe_unet['end']= lfe_stops
+lfe_unet['end'] = lfe_stops
 lfe_detections_unet = lfe_unet.merge(lfe_eph_df, left_on='start', right_on='start', how ='left')
+
+lfe_detections_unet['duration'] = durations
 
 lfe_detections_unet.to_csv('data/calculated/lfe_detections_unet.csv')
