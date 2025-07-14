@@ -12,8 +12,8 @@ from multiprocess import Pool  # Change 'multiprocess' to 'multiprocessing' if g
 from lfe_func import get_sav_data, get_poly_coords
 
 # Filepaths
-unet_catalogue_fp = '../data/raw/unet_output/2004001_2017258_catalogue.json'
-skr_poly_flux_fp = '../data/calculated/skr_poly_flux'
+unet_catalogue_fp = 'data/raw/unet_output/2004001_2017258_catalogue.json'
+skr_poly_flux_fp = 'data/calculated/skr_poly_flux'
 
 # Import all Polygon Time Frequency Coordinates and put them in a list
 catalogue = TFCat.from_file(unet_catalogue_fp)
