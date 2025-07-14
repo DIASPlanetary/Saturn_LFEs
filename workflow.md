@@ -45,10 +45,7 @@ To Do
 
 CODE TO BE CHANGED
 ------------------
-- deal with the different name of 2017 sav file in lfe_func
 - recalculate polyflux using the joined LFEs and add code snippet that combines the file
-- name variable in polyflux combined as flux when first saving
-- take files out of output_unet folder
 
 HOW THE CODE WORKS
 ------------------
@@ -60,112 +57,11 @@ add_ppos.py
 to generate json:
 join_json.py
 
-GOAL = We want start, end, duration, north/south phase, x, y, z, R, lat, localtime
+to generate poly_flux_joined:
+get_polygon_flux.py
 
-1) Sav files are the raw radio data with time (3min step), freq (48, first half log, then half linear), flux
-
-input: raw_SKR/
-process: none
-output: none
-
-2) Unet are polygons or subset of that data, with same time, freq, but no flux just polygon vertices.
-
-Json needs to be joined to obtain the actual good json file
-
-input: 2004001_2017258_catalogue.json
-process: ?
-output: 2004001_2017258_catalogue.csv
-
-3) need to know where spacecraft is for each time of LFEs and radio data -> use SPICE Spice has time (1min step), coords (xyz KSM).
-
-input: 2004001_2017258_catalogue.csv
-process: get_ephemeris.py
-output: lfe_detections_unet.csv, ephemeris file
-
-4) Polygons joining
-
-input: lfe_detections_unet.csv
-process: join_lfes
-output: LFEs_joined.csv
-
-5) PPO phases file with phase information to be added to the csv
-
-input: mag_phases_2004_2017_final.sav, LFEs_joined.csv
-process: SavePPO in Global_Local_Phases.py or SavePPO in LFE_statistics.py
-output: Joined_LFEs_w_phases.csv
-
-So there are actually three big parts to the code:
-- Make scientifically relevant LFE polygons
-- Create the big LFE joined files
-- Do the data analysis
-
-Other
------
-
-input: LFEs_joined.csv, LFE_joined_ephemeris.csv
-process: Omega_csv.py
-output: LFEs_joined_times_range_lst_lat.csv
-
-input:?
-process: plotting_func.py
-output: plots
-
-input:?
-process: Polar_Plot_Comparison.py
-output: plots
-
-input: ?
-process: Radio_visualisations_joined.py
-output: plots
-
-input: ?
-process: Radio_visualisations.py
-output: plots
-
-input: ?
-process: Step_Hist_R_LST_lat.py
-output: plots
-
-input: ?
-process: Sunspot_LFE_Occurence
-output: plots
-
-input: ?
-process: Cassini_Pos_LFE.py
-output: plots
-
-input: ?
-process: PlotPPO in LFE_statistics.py
-output: plots
-
-input: ?
-process: PPOphasecheck in LFE_statistics.py
-output: ?
-
-input: ?
-process: PlotDuration Histogram in LFE_statistics.py
-output: plots
-
-input: ?
-process: Delta_t_LFEs in LFE_statistics.py
-output: plots
-
-input: ?
-process: InspectLongestLFEs in LFE_statistics.py
-output: plots and "i love IDL"
-
-input: ?
-process: ResidencePlots in LFE_statistics.py
-output: plots
-
-input: ?
-process: PlotLfeDistributions1 in LFE_statistics.py
-output: plots
-
-input: ?
-process: PlotLfeDistributions in LFE_statistics.py
-output: plots
-
-input: ?
-process: ?
-output: ?
+A couple of things for Caitriona
+--------------------------------
+- File names will need to be changed in the Zenodo + better title/description/accurate list of authors
+- Add article URL in github description (Edit repository details -> Website)
+- SKR files link are in a very different format from the sav files, look into reuploading them.
