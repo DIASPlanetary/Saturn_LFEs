@@ -4,7 +4,7 @@ import pandas as pd
 import datetime
 import tqdm
 
-unet_catalogue_csv_fp = 'data/raw/unet_output/2004001_2017258_start_stop_times.csv'
+unet_catalogue_csv_fp = 'data/raw/2004001_2017258_start_stop_times.csv'
 
 #   CASSINI end date: Sep. 15 2017
 start_datetime = datetime.datetime(2004, 1, 1)

@@ -18,7 +18,7 @@ data_end = pd.Timestamp(data_str_end)
 LFE_calculated_path = 'data/calculated/'
 LFE_raw_path = 'data/raw/'
 
-polygon_fp = LFE_raw_path + "unet_output/2004001_2017258_catalogue.json"
+polygon_fp = LFE_raw_path + "2004001_2017258_catalogue.json"
 
 def get_polygons(polygon_fp, start, end):
         print("are we getting here and finding polygons?")    
