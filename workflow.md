@@ -38,7 +38,6 @@ After that we need to talk about the integrated power calculation. I may want to
 
 To Do
 -----
-
 - How do you want to deal with SPICE? was thinking: change spice path to your own files or download the relevant spice kernels using this githu repo |link to Matt's Autometa|
 - Before I can do anything else I will need to know the exact workflow of the code
 - Where is the data stored, how does it integrate with the code base
@@ -49,11 +48,10 @@ CODE TO BE CHANGED
 - deal with the different name of 2017 sav file in lfe_func
 - recalculate polyflux using the joined LFEs and add code snippet that combines the file
 - name variable in polyflux combined as flux when first saving
-- change get_polygon_flux to python script
+- take files out of output_unet folder
 
 HOW THE CODE WORKS
 ------------------
-
 order to run files in:
 get_ephemeris.py
 join_lfes.py
