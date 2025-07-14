@@ -1,3 +1,6 @@
+import shutil
+from pathlib import Path
+
 import numpy as np
 import xarray as xr
 
@@ -79,5 +82,23 @@ for year in range(2004, 2018):
 
     da.to_netcdf(skr_poly_flux_fp + f'/poly_flux_{year}.ncdf')
 
-# Add code to combine the file and delete intermediate files
+# Combine files
+times = []
+fluxes = []
+for year in range(2004, 2018):
+    ds = xr.open_dataset(skr_poly_flux_fp + f'/poly_flux_{year}.ncdf', engine='netcdf4') 
+    time, flux = ds['time'].to_numpy(), ds['flux'].to_numpy()
+    times.append(time)
+    fluxes.append(flux)
 
+times = np.hstack(times)
+fluxes = np.hstack(fluxes)
+freqs = ds['frequency'].to_numpy()
+
+da = xr.DataArray(fluxes, dims=['frequency', 'time'], coords= {'frequency': (['frequency'], freqs), 'time':(['time'], times)}, name='flux')
+
+da.to_netcdf('data/calculated/poly_flux_combined.ncdf')
+
+# Delete intermediate files
+if Path(skr_poly_flux_fp).is_dir():
+    shutil.rmtree(skr_poly_flux_fp)
