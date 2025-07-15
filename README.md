@@ -23,23 +23,24 @@ pip install -r requirements.txt
 ### SPICE
 If you're familiar with using SPICE and spiceypy - and have your own metakernel - you can skip to the end of this section and replace the path with a path to your metakernel. Otherwise please follow the instructions below:
 
-To use spiceypy to quickly retrieve Cassini ephemeris we must download the relevant SPICE kernels. [AutoMeta](https://github.com/mjrutala/AutoMeta) (Rutala, M. J.) is a great package for easily downloading the required kernels without needing any experience with SPICE. It can be downloaded using the following command:
+To use spiceypy to quickly retrieve Cassini ephemeris we must download the relevant SPICE kernels. [AutoMeta](https://github.com/mjrutala/AutoMeta) (Rutala, M. J.) is a great package for easily downloading the required kernels without needing any experience with SPICE. In `Saturn_LFEs` directory execute this command:
 
 ```
-git clone https://github.com/mjrutala/AutoMeta
+git clone https://github.com/mjrutala/AutoMeta.git
 ```
 
-Then open a python terminal by typing:
+Then run:
 
 ```
-python
+python Autometa/autometa/make_Metakernel.py
 ```
-And inside the python terminal run:
+And when prompted with typing the name of the spacecraft simply type:
 ```
-from make_Metakernel import * make_Metakernel("Cassini")
+Cassini
 ```
+And press `Enter`. Then press `Enter` again to download the SPICE folder at the root directory of `Saturn_LFEs`.
 
-This will download the Cassini kernel files (~3 GB) which may take some time. When finished, you will find a subdirectories `SPICE/Cassini/` which will contain `metakernel_cassini.txt`. Finally,  update the `spice.furnsh("path/to/metakernel")` path in `data_processing/findDetectionPositions.py` with your path to your metakernel.
+This will download the Cassini kernel files (~3 GB) in a SPICE folder at the root of the project. When finished, you will find a subdirectories `SPICE/Cassini/` which will contain `metakernel_cassini.txt`.
 
 ### Downloading the data
 
