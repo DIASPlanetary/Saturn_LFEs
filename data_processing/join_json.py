@@ -6,8 +6,6 @@ import numpy as np
 import pandas as pd
 from tfcat import TFCat
 
-from dst_correction import europe_dst_range
-
 #dates you would like to plot visualisations for year-month-day
 data_str_start = '2004-01-01'
 data_str_end = '2017-09-14'
@@ -33,7 +31,6 @@ def get_polygons(polygon_fp, start, end):
             time_points=np.array(catalogue._data["features"][i]['geometry']['coordinates'][0])[:,0]
             if any(time_points <= unix_end) and any(time_points >= unix_start):
                 polygon_array.append(np.array(catalogue._data["features"][i]['geometry']['coordinates'][0]))
-        
         return polygon_array
     
     # Comparison func - total lfes match joint?
@@ -54,7 +51,6 @@ def comparison(date_start, date_end):
     joint_min = joint.loc[(joint['start'] >= date_start) & (joint['start'] <= date_end)]
     joint_num = np.shape(joint_min)[0]
     print('Joined Polygons:', joint_num)
-    
     return full_df, saved_polys, joint_min, poly_num, joint_num
 
 # Do we even need to join? 
@@ -188,16 +184,16 @@ else: # We need to create new array with collection of JOINT vertices
         i += 1
 
 # DST corrections to joined polygons
-for polygon in range(len(polygon_array)):
-    data_start = np.min([datetime.fromtimestamp(polygon_array[polygon][:, 0][i]) for i in range(len(polygon_array[polygon][:, 0]))])
-    data_end = np.max([datetime.fromtimestamp(polygon_array[polygon][:, 0][i]) for i in range(len(polygon_array[polygon][:, 0]))])
-
-    # This would allow for polygons across two years - December DEF not impacted by DST
-    if data_start >= europe_dst_range(data_start.year)[0] and data_end <= europe_dst_range(data_start.year)[1]:
-        for vertex in range(len(polygon_array[polygon])):
-            polygon_array[polygon][vertex, 0] = (datetime.fromtimestamp(polygon_array[polygon][vertex, 0]) - pd.Timedelta(1, 'hour')).timestamp()
-    else:
-        pass
+#for polygon in range(len(polygon_array)):
+#    data_start = np.min([datetime.fromtimestamp(polygon_array[polygon][:, 0][i]) for i in range(len(polygon_array[polygon][:, 0]))])
+#   data_end = np.max([datetime.fromtimestamp(polygon_array[polygon][:, 0][i]) for i in range(len(polygon_array[polygon][:, 0]))])
+#
+#    # This would allow for polygons across two years - December DEF not impacted by DST
+#    if data_start >= europe_dst_range(data_start.year)[0] and data_end <= europe_dst_range(data_end.year)[1]:
+#        for vertex in range(len(polygon_array[polygon])):
+#            polygon_array[polygon][vertex, 0] = (datetime.fromtimestamp(polygon_array[polygon][vertex, 0]) - pd.Timedelta(1, 'hour')).timestamp()
+#    else:
+#        pass
 
 # Create a new .json file with JOINED & DST-corrected Polygon Vertices
 # Joint polygons to dictionary
@@ -213,5 +209,5 @@ for shape in range(len(polygon_array)):
         new_dic['features'].append({"geometry" : {"coordinates": [coords]}})
 
 # Save .json file
-with open('data/calculated/2004001_2017258_joint_dst_catalogue.json', 'w') as outfile:
+with open('data/calculated/2004001_2017258_joint_catalogue.json', 'w') as outfile:
     json.dump(new_dic, outfile)
