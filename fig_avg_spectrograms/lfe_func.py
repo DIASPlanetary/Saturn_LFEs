@@ -9,7 +9,7 @@ def get_sav_data(year):
     
     Parameters
     ----------
-    year: int
+    year: int or str
         Year of the file wanted.
     
     Returns
@@ -42,11 +42,11 @@ def get_poly_coords(year, poly_tf_list):
 
     Parameters
     ----------
-    year: int
-        Year chosen
+    year: int or string
+        Year chosen.
     
     poly_tf_list: list
-        List of polygon time-frequency coordinates
+        List of polygon time-frequency coordinates.
     
     Returns
     -------
