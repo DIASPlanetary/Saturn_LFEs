@@ -31,7 +31,7 @@ def get_sav_data(year):
     flux, time_doy, freq = raw_skr['s'].copy(), raw_skr['t'], raw_skr['f']
     flux[flux == 0] = np.nan  # replace 0 with nans
 
-    time = (time_doy * 24 * 3600).astype('timedelta64[s]') + np.datetime64('1997') - np.timedelta64(1, 'D') + np.timedelta64(1, 's')
+    time = (time_doy * 24 * 3600).astype('timedelta64[s]') + np.datetime64('1997') - np.timedelta64(1, 'D') + np.timedelta64(1, 's') # SAV time correction
     time = time.astype('datetime64[m]')
     time = time.astype('datetime64[s]')
 
