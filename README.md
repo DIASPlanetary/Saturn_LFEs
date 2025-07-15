@@ -2,6 +2,8 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15879094.svg)](https://doi.org/10.5281/zenodo.15879094)
 
+![Example of an LFE plotted over flux](lfe_example.png)
+
 - __Authors__: Caitríona M. Jackman, Elizabeth O'Dwyer, Simon Walker, Nathan M. Besch
 
 This is the codebase for Jackman et al. (2025), please follow the instructions below to reproduce the figures of the paper. If you only want to access the data find it [here](https://doi.org/10.5281/zenodo.15879094). 
