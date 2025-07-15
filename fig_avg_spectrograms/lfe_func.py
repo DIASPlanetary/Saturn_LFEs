@@ -1,5 +1,3 @@
-import configparser
-
 import numpy as np
 import matplotlib.dates as mdates
 from scipy.io import readsav
