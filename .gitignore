@@ -1,0 +1,8 @@
+.DS_Store
+data/
+SPICE/
+.python-version
+integration_not_sorted/df_int_poly.csv
+integration_not_sorted/df_lin_all.csv
+integration_not_sorted/df_lin_poly.csv
+workflow.md
