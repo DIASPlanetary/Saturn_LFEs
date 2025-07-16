@@ -29,16 +29,19 @@ Please download the data from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenod
 
 Additionally you will need the [Yearly raw Saturn Kilometric Radiation (SKR) files](https://doi.org/10.25935/zkxb-6c84) to be placed in `data/raw/SKR_raw`.
 
-You will then be able to reproduce the figures. If you want to re-create these files from previously published datasets, check the next section.
-
-## Data Processing
-
-The new published catalogue and its satellites files are obtained using the scripts in `data_processing/`. To be able to create them we need original raw files to be placed in `data/raw/` as well as SPICE kernels.
-
 ### Download raw files
+
+These files are to be placed in `data/raw/`
+
 - [Yearly raw Saturn Kilometric Radiation (SKR) files](https://doi.org/10.25935/zkxb-6c84) containing the flux information for the duration of the Cassini mission. Place them in `data/raw/SKR_raw/`.
 - [Low Frequency Extensions (LFEs) catalogue](https://doi.org/10.5281/zenodo.8075624) containing LFE start and stop times as well as polygon vertices on the flux map from SKR raw data. Also has a csv file containing start and stop times of LFEs.
 - [Phase information](https://figshare.le.ac.uk/articles/dataset/PPO_phases_2004-2017/10201442)
+
+> **This is all the setup that is required to reproduce the figures inside `fig` folders.** If you want to re-create the calculated files, check the next section.
+
+## Data Processing
+
+To be able to re-create the calculated files i.e. the new LFE catalogue, you will need to download the raw files as stated above as well as setting up SPICE kernels, and then run python scripts in `data_processing/`. Details below.
 
 ### SPICE
 If you're familiar with using SPICE and spiceypy - and have your own metakernel - you can skip to the end of this section and replace the path with a path to your metakernel. Otherwise please follow the instructions below:
