@@ -7,11 +7,15 @@ workflow.md
 
 data/calculated/*
 data/calculated/skr_poly_flux/*
+!data/calculated/README.md
 !data/calculated/skr_poly_flux
+!data/calculated/skr_poly_flux/README.md
 
 data/raw/*
 data/raw/SKR_raw/*
+!data/raw/README.md
 !data/raw/SKR_raw/
+!data/raw/SKR_raw/README.md
 
 
 integration_not_sorted/df_int_poly.csv

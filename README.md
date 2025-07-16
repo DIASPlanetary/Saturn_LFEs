@@ -1,12 +1,12 @@
 #  Low Frequency Extensions of Cyclotron Maser Instability-Generated Radio Emission: A Statistical View of Low Frequency Extensions from Cassini at Saturn
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15879094.svg)](https://doi.org/10.5281/zenodo.15879094)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15924636.svg)](https://doi.org/10.5281/zenodo.15924636)
 
 - __Authors__: Caitríona M. Jackman, Elizabeth O'Dwyer, Simon Walker, Nathan M. Besch
 
 ![Example of an LFE plotted over flux](lfe_example.png)
 
-This is the codebase for Jackman et al. (2025), please follow the instructions below to reproduce the figures of the paper. If you only want to access the data find it [here](https://doi.org/10.5281/zenodo.15879094). 
+This is the codebase for Jackman et al. (2025), please follow the instructions below to reproduce the figures of the paper. If you only want to access the data find it [here](https://doi.org/10.5281/zenodo.15924636). 
 
 ## Installation Steps (recommended)
 
@@ -46,7 +46,7 @@ This will download the Cassini kernel files (~3 GB) in a SPICE folder at the roo
 
 ### Downloading the data
 
-Please download the data from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15879094.svg)](https://doi.org/10.5281/zenodo.15879094) and place it in `data/calculated/`.
+Please download the data from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15879094.svg)](https://doi.org/10.5281/zenodo.15924636) and place it in `data/calculated/`.
 
 Additionally you will need the [Yearly raw Saturn Kilometric Radiation (SKR) files](https://doi.org/10.25935/zkxb-6c84) to be placed in `data/raw/SKR_raw`.
 
