@@ -46,7 +46,7 @@ This will download the Cassini kernel files (~3 GB) in a SPICE folder at the roo
 
 ### Downloading the data
 
-Please download the data from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15879094.svg)](https://doi.org/10.5281/zenodo.15924636) and place it in `data/calculated/`.
+Please download the data from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15879094.svg)](https://doi.org/10.5281/zenodo.15924636) and place the files in `data/calculated/`.
 
 Additionally you will need the [Yearly raw Saturn Kilometric Radiation (SKR) files](https://doi.org/10.25935/zkxb-6c84) to be placed in `data/raw/SKR_raw`.
 
