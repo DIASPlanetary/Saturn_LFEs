@@ -1,6 +1,6 @@
 #  Low Frequency Extensions of Cyclotron Maser Instability-Generated Radio Emission: A Statistical View of Low Frequency Extensions from Cassini at Saturn
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15924636.svg)](https://doi.org/10.5281/zenodo.15924636)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15979056.svg)](https://doi.org/10.5281/zenodo.15979056)
 
 - __Authors__: Caitríona M. Jackman, Elizabeth O'Dwyer, Simon Walker, Nathan M. Besch
 
@@ -25,7 +25,7 @@ pip install -r requirements.txt
 
 ### Download calculated files
 
-Please download the data from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15879094.svg)](https://doi.org/10.5281/zenodo.15924636) and place the files in `data/calculated/`.
+Please download the data from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15979056.svg)](https://doi.org/10.5281/zenodo.15979056) and place the files in `data/calculated/`.
 
 Additionally you will need the [Yearly raw Saturn Kilometric Radiation (SKR) files](https://doi.org/10.25935/zkxb-6c84) to be placed in `data/raw/SKR_raw`.
 
