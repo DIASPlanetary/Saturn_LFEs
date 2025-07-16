@@ -17,7 +17,7 @@ Clone the repository in your desired directory:
 ```
 git clone https://github.com/DIASPlanetary/Saturn_LFEs.git
 ```
-We recommend creating a new Python 3.13.1+ environment using your preferred tool. Install the required project packages in your newly created environment:
+We recommend creating a new Python 3.13.1+ environment using your preferred tool. Go into `Saturn_LFEs` and install the required project packages in your newly created environment:
 ```
 pip install --upgrade pip
 pip install -r requirements.txt
@@ -42,7 +42,7 @@ Cassini
 ```
 And press `Enter`. Then press `Enter` again to download the SPICE folder at the root directory of `Saturn_LFEs`.
 
-This will download the Cassini kernel files (~3 GB) in a SPICE folder at the root of the project. When finished, you will find a subdirectories `SPICE/Cassini/` which will contain `metakernel_cassini.txt`.
+This will download the Cassini kernel files (~3 GB) in a SPICE folder at the root of the project. When finished, you will find a subdirectory `SPICE/Cassini/` which will contain `metakernel_cassini.txt`.
 
 ### Downloading the data
 
@@ -54,9 +54,9 @@ You will then be able to reproduce the figures. If you want to re-create these f
 
 ## Data Processing
 
-The new published catalogue and its satellites files are obtained using the scripts in `data_processing/`. To be able to obtain them we need original raw files:
+The new published catalogue and its satellites files are obtained using the scripts in `data_processing/`. To be able to obtain them we need original raw files to be placed in `data/raw/`:
 
-- [Yearly raw Saturn Kilometric Radiation (SKR) files](https://doi.org/10.25935/zkxb-6c84) containing the flux information for the duration of the Cassini mission. Located in `SKR_raw/`.
+- [Yearly raw Saturn Kilometric Radiation (SKR) files](https://doi.org/10.25935/zkxb-6c84) containing the flux information for the duration of the Cassini mission. Place them in `data/raw/SKR_raw/`.
 - [Low Frequency Extensions (LFEs) catalogue](https://doi.org/10.5281/zenodo.8075624) containing LFE start and stop times as well as polygon vertices on the flux map from SKR raw data. Also has a csv file containing start and stop times of LFEs.
 - [Phase information](https://figshare.le.ac.uk/articles/dataset/PPO_phases_2004-2017/10201442)
 
