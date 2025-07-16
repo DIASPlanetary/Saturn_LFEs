@@ -4,8 +4,8 @@ import pandas as pd
 import datetime
 import tqdm
 
-spice.furnsh("SPICE/cassini/metakernel_cassini.txt")
-spice.furnsh("SPICE/cassini/kernels/fk/cas_dyn_v03.tf")
+#spice.furnsh("SPICE/cassini/metakernel_cassini.txt")
+#spice.furnsh("SPICE/cassini/kernels/fk/cas_dyn_v03.tf")
 unet_catalogue_csv_fp = 'data/raw/2004001_2017258_start_stop_times.csv'
 
 #   CASSINI end date: Sep. 15 2017
@@ -97,7 +97,7 @@ def get_CassiniEphemeris(datetimes):
 
 #   Print this to a csv (this will be pretty hefty)
 eph_df = get_CassiniEphemeris(minutely_datetimes)
-eph_df.to_csv('data/calculated/20040101000000_20170915115700_ephemeris.csv', index_label='datetime')
+eph_df.to_csv('data/calculated/20040101000000_20170915115700_ephemeris.csv')
 
 lfe_unet = pd.read_csv(unet_catalogue_csv_fp)
 startTimes = lfe_unet["start"]
