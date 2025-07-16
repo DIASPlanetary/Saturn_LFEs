@@ -24,7 +24,7 @@ def get_sav_data(year):
         Magnetic flux values for the chosen year.
     """
 
-    skr_raw_fp = '../data/raw/SKR_raw'
+    skr_raw_fp = 'data/raw/SKR_raw'
 
     file_skr = skr_raw_fp + f'/SKR_{year}_CJ.sav'
     raw_skr = readsav(file_skr)
