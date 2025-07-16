@@ -15,14 +15,14 @@ from multiprocess import Pool  # Change 'multiprocess' to 'multiprocessing' if g
 from lfe_func import get_sav_data, get_poly_coords
 
 # Filepaths
-unet_catalogue_fp = 'data/raw/2004001_2017258_catalogue.json'
+unet_catalogue_fp = 'data/calculated/2004001_2017258_joint_catalogue.json'
 skr_poly_flux_fp = 'data/calculated/skr_poly_flux'
 
 # Import all Polygon Time Frequency Coordinates and put them in a list
 catalogue = TFCat.from_file(unet_catalogue_fp)
 
 poly_tf_list = []
-for i in range(4874):
+for i in range(len(catalogue._data['features'])):
     poly_time, poly_freq = np.array(catalogue._data['features'][i]['geometry']['coordinates'][0]).T
 
     poly_time = poly_time.astype('datetime64[s]')
@@ -100,5 +100,5 @@ da = xr.DataArray(fluxes, dims=['frequency', 'time'], coords= {'frequency': (['f
 da.to_netcdf('data/calculated/poly_flux_combined.ncdf')
 
 # Delete intermediate files
-if Path(skr_poly_flux_fp).is_dir():
-    shutil.rmtree(skr_poly_flux_fp)
+#if Path(skr_poly_flux_fp).is_dir():
+#    shutil.rmtree(skr_poly_flux_fp)
