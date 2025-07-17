@@ -41,6 +41,8 @@ These files are to be placed in `data/raw/`
 
 ## Data Processing
 
+**Please run all python scripts from the `Saturn_LFEs` directory, otherwise the relative file paths will not work.**
+
 To be able to re-create the calculated files i.e. the new LFE catalogue, you will need to download the raw files as stated above as well as setting up SPICE kernels, and then run python scripts in `data_processing/`. Details below.
 
 ### SPICE
