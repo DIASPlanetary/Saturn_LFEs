@@ -37,7 +37,7 @@ These files are to be placed in `data/raw/`
 - [Low Frequency Extensions (LFEs) catalogue](https://doi.org/10.5281/zenodo.8075624) containing LFE start and stop times as well as polygon vertices on the flux map from SKR raw data. Also has a csv file containing start and stop times of LFEs.
 - [Phase information](https://figshare.le.ac.uk/articles/dataset/PPO_phases_2004-2017/10201442)
 
-> **This is all the setup that is required to reproduce the figures inside `fig` folders.** If you want to re-create the calculated files, check the next section.
+**This is all the setup that is required to reproduce the figures inside `fig` folders.** If you want to re-create the calculated files, check the next section.
 
 ## Data Processing
 
