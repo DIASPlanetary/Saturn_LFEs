@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15979056.svg)](https://doi.org/10.5281/zenodo.15979056)
 
-- __Authors__: Caitríona M. Jackman, Alexandra R. Fogg, Stan W.H. Cowley, Gabrille Provan, Hanna Adamski, Nathan M. Besch, Simon Walker, Matthew J. Rutala, Daragh M. Hollman, Laurent Lamy, Elizabeth P. O'Dwyer
+- __Authors__: Caitríona M. Jackman, Alexandra R. Fogg, Stan W.H. Cowley, Gabrille Provan, Hanna Adamski, Nathan M. Besch, Daragh M. Hollman, Simon Walker, Matthew J. Rutala, Laurent Lamy, Corentin Louis, Elizabeth P. O'Dwyer
 
 ![Example of an LFE plotted over flux](lfe_example.png)
 
